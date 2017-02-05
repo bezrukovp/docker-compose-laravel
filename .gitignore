@@ -1,3 +1,14 @@
 .idea
+.DS_Store
+Thumbs.db
+
+*--
+*-
+*--.*
+*-.*
+
+!.gitkeep
+
 /logs
 /data
+.env
