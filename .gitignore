@@ -7,8 +7,9 @@ Thumbs.db
 *--.*
 *-.*
 
-!.gitkeep
-
-/logs
-/data
+/logs/
+/data/
 .env
+*.override.yml
+
+!.gitkeep
