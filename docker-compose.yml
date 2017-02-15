@@ -36,6 +36,8 @@ services:
             - applications
         extra_hosts:
             - "dockerhost:$COMPOSE_DOCKER_HOST"
+        networks:
+            - default
         tty: true
 
 ### PHP-FPM Container #######################################
@@ -56,6 +58,8 @@ services:
                 - INSTALL_AEROSPIKE_EXTENSION=false
                 - CODEIGNITER=false
             dockerfile: Dockerfile-70
+        environment:
+            - PHP_IDE_CONFIG=serverName=$VIRTUAL_HOST_MAIN
         volumes_from:
             - applications
         expose:
@@ -65,8 +69,8 @@ services:
             - redis
         extra_hosts:
             - "dockerhost:$COMPOSE_DOCKER_HOST"
-        environment:
-            - PHP_IDE_CONFIG=serverName=$VIRTUAL_HOST_MAIN
+        networks:
+            - default
 
 ### Nginx Server Container ##################################
 
